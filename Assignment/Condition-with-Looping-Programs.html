@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition-with-Looping-Programs</title>
+</head>
+<body>
+    <script>
+
+        // Q1. Check Even or Odd → Determine whether a number is even or odd.
+        var num_evenOdd = parseInt(prompt("Enter the Number: "))
+        if(num_evenOdd%2 == 0){
+            alert("This Number is Even")
+        }else{
+            alert("This Number is odd")
+        }
+
+
+        // Q2. Find Maximum of Three Numbers → Compare three numbers and print the largest one.
+        var max_num1 = parseInt(prompt("Enter the First Number: "))
+        var max_num2 = parseInt(prompt("Enter the Second Number: "))
+        var max_num3 = parseInt(prompt("Enter the Third Number: "))
+        if(max_num1 > max_num2){
+
+            if(max_num1 > max_num3){
+                alert("First Number is Larger.")
+            }else{
+                alert("Third Number is Larger.")
+            }
+        }else{
+            if(max_num2 > max_num3){
+                alert("Second Number is Larger.")
+            }else{
+                alert("Third Number is Larger.")
+            }
+        }
+
+
+
+        // Q3. Print Numbers 1 to N → Display numbers from 1 up to N.
+        var print_upto_N = parseInt(prompt("Enter The Number: "))
+        for(let i=1; i<=print_upto_N; i++){
+            console.log(i)
+        }
+
+
+
+        // Q4. Print Even Numbers → Display all even numbers within a given range.
+        var num_eve = parseInt(prompt("Enter The Number: "))
+        for(let i=1; i<=num_eve; i++){
+            if(i %2 == 0){
+                console.log(i)
+            }
+        }
+
+
+        // Q5. Sum of N Natural Numbers → Add numbers from 1 to N.
+        var num_Natural = parseInt(prompt("Enter The Number: "))
+        var natural_sum=0
+        for(let i=1; i<=num_Natural; i++){
+            if(i > 0){
+                natural_sum = natural_sum +i
+            }
+        }
+        alert(natural_sum)
+
+
+
+        // Q6. Sum of Odd Numbers → Add odd numbers up to N.
+        var num_odd = parseInt(prompt("Enter The Number: "))
+        var odd_sum=0
+        for(let i=1; i<=num_odd; i++){
+            if(i %2 != 0){
+                odd_sum = odd_sum +i
+            }
+        }
+        alert(odd_sum)
+
+
+
+        // Q7. Factorial of a Number → Multiply all numbers from 1 to N.
+        var num_fac = parseInt(prompt("Enter The Number: "))
+        if (isNaN(num_fac) || num_fac < 0) {
+            alert("Please enter a valid non-negative number.");
+        } else {
+            var fac_result=1
+            for(let i=1; i<=num_fac; i++){
+                    fac_result = fac_result *i
+            }
+            alert(fac_result)
+        }
+
+
+
+        // Q8. Reverse a Number → Reverse the digits of a number using loop.
+        
+        var num_rev_ans = parseInt(prompt("Enter The Number: "))
+        var rev = 0, rem
+
+        while(num_rev_ans > 0){
+            rem = num_rev_ans % 10
+            rev = rev *10 + rem
+            num_rev_ans = parseInt(num_rev_ans / 10) 
+        }
+        alert(rev)
+
+
+
+        // Q9. Count Digits → Count how many digits are in a number.
+        var num_cu = parseInt(prompt("Enter The Number: "))
+        var Count = 0
+        while(num_cu > 0){
+            num_cu = parseInt(num_cu/10)
+            Count++
+        }
+        alert(Count)
+
+
+
+        // Q10. Fibonacci Series → Generate Fibonacci numbers up to N terms.
+
+        var num_fb = parseInt(prompt("Enter the Number: "))
+        var a=0, b=1, c,d=""
+        
+        for(let i=0; i<num_fb; i++){
+            d = d + a + " "
+            c = a + b
+            a = b
+            b = c
+        }
+        alert(d)
+    </script>
+</body>
+</html>
