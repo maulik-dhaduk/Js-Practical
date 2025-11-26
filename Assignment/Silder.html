@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Slider</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .slider {
+            position: relative;
+            width: 100%;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .prev-btn, .next-btn {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="slider">
+
+        <img src="https://www.shoetree.io/cdn/shop/files/web.png?v=1754550818&width=2000" class="active" />
+        <img src="https://www.shoetree.io/cdn/shop/files/Jove_2.jpg?v=1738222289&width=2000" />
+        <img src="https://www.shoetree.io/cdn/shop/files/Cobblers.jpg?v=1738222289&width=2000" />
+        <img src="https://www.shoetree.io/cdn/shop/files/Ronnie_Grey_3.jpg?v=1738222289&width=2000" />
+
+
+        <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script>
+        var images = document.querySelectorAll(".slider img");
+        var index = 0;
+        var interval;
+
+        function Showimage() {
+            images.forEach((img) => img.style.display = "none");
+            images[index].style.display = "block";
+        }
+
+        Showimage();
+
+        function next_slider() {
+            index++;
+            if (index >= images.length) {
+                index = 0;
+            }
+            Showimage();
+        }
+
+        function prev_slider() {
+            index--;
+            if (index < 0) {
+                index = images.length - 1;
+            }
+            Showimage();
+        }
+
+        function start_autoslider() {
+            interval = setInterval(() => {
+                next_slider();
+            }, 4000);
+        }
+        
+        start_autoslider();
+
+        document.querySelector(".next-btn").addEventListener("click", () => {
+            next_slider();
+            clearInterval(interval);
+            start_autoslider();
+        });
+
+        document.querySelector(".prev-btn").addEventListener("click", () => {
+            prev_slider();
+            clearInterval(interval);
+            start_autoslider();
+        });
+    </script>
+</body>
+</html>
