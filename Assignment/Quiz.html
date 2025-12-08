@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        .second {
+            float: right;
+            color: green;
+            font-weight: bold;
+            font-size: 20px;
+
+        }
+    </style>
+</head>
+
+
+<body class="bg-light">
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow p-4">
+
+                    <div id="q1" class="question mb-4">
+                        <h5>Which of the following is NOT a primitive data type in JavaScript?</h5>
+                        <span class="second"></span>
+                        <div class="form-check">
+                            <input type="radio" id="q1-a" name="data_type" value="q1-a" class="form-check-input" />
+                            <label for="q1-a" class="form-check-label">String</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q1-b" name="data_type" value="q1-b" class="form-check-input" />
+                            <label for="q1-b" class="form-check-label">Number</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q1-c" name="data_type" value="q1-c" class="form-check-input" />
+                            <label for="q1-c" class="form-check-label">Object</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q1-d" name="data_type" value="q1-d" class="form-check-input" />
+                            <label for="q1-d" class="form-check-label">Boolean</label>
+                        </div>
+                    </div>
+
+
+                    <div id="q2" class="question mb-4">
+                        <h5>What is the purpose of isNaN() function in JavaScript?</h5>
+                        <span class="second"></span>
+                        <div class="form-check">
+                            <input type="radio" id="q2-a" name="is_nan" value="q2-a" class="form-check-input" />
+                            <label for="q2-a" class="form-check-label">To check if a variable is null</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q2-b" name="is_nan" value="q2-b" class="form-check-input" />
+                            <label for="q2-b" class="form-check-label">To check if a value is undefined</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q2-c" name="is_nan" value="q2-c" class="form-check-input" />
+                            <label for="q2-c" class="form-check-label">To check if a value is not a number</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q2-d" name="is_nan" value="q2-d" class="form-check-input" />
+                            <label for="q2-d" class="form-check-label">To convert a value to a number</label>
+                        </div>
+                    </div>
+
+                    <div id="q3" class="question mb-4">
+                        <h5>Which of these methods can be used to convert a JSON string into a JavaScript object?</h5>
+                        <span class="second"></span>
+                        <div class="form-check">
+                            <input type="radio" id="q3-a" name="convert_json" value="q3-a" class="form-check-input" />
+                            <label for="q3-a" class="form-check-label">JSON.parse()</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q3-b" name="convert_json" value="q3-b" class="form-check-input" />
+                            <label for="q3-b" class="form-check-label">JSON.stringify()</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q3-c" name="convert_json" value="q3-c" class="form-check-input" />
+                            <label for="q3-c" class="form-check-label">JSON.convert()</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q3-d" name="convert_json" value="q3-d" class="form-check-input" />
+                            <label for="q3-d" class="form-check-label">JSON.toObject()</label>
+                        </div>
+                    </div>
+
+
+                    <div id="q4" class="question mb-4">
+                        <h5>Which statement is true about let, var, and const in JavaScript?</h5>
+                        <span class="second"></span>
+                        <div class="form-check">
+                            <input type="radio" id="q4-a" name="statement" value="q4-a" class="form-check-input" />
+                            <label for="q4-a" class="form-check-label">var is block scoped</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q4-b" name="statement" value="q4-b" class="form-check-input" />
+                            <label for="q4-b" class="form-check-label">let and const are function scoped</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q4-c" name="statement" value="q4-c" class="form-check-input" />
+                            <label for="q4-c" class="form-check-label">const variables can be reassigned</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="q4-d" name="statement" value="q4-d" class="form-check-input" />
+                            <label for="q4-d" class="form-check-label">let is block scoped</label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="d-flex justify-content-between">
+                        <button id="next" class="btn btn-primary">Next</button>
+                        <button id="submit" class="btn btn-success">Submit</button>
+                    </div>
+
+                    <div id="score" class="fw-bold text-center fs-5 text-success"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var question = document.querySelectorAll(".question")
+        var index = 0
+        var countIntervaltime
+
+        function Showdata() {
+
+            if (index === question.length - 1) {
+                document.getElementById("next").style.display = "none"
+                document.getElementById("submit").style.display = "block"
+            } else {
+                document.getElementById("next").style.display = "block"
+                document.getElementById("submit").style.display = "none"
+            }
+
+            for (let i = 0; i < question.length; i++) {
+                question[i].style.display = "none"
+            }
+
+            if (index < question.length) {
+                question[index].style.display = "block"
+
+
+                let count = 30
+                let second = question[index].querySelector(".second")
+                second.textContent = count
+
+                clearInterval(countIntervaltime)
+
+                countIntervaltime = setInterval(() => {
+                    count--
+                    if (count >= 0) {
+                        second.textContent = count
+                    }
+                    if (count < 0) {
+                        clearInterval(countIntervaltime)
+                        index++
+                        Showdata()
+                        if (index === question.length) {
+                            Get_Score()
+                        }
+                    }
+                }, 1000);
+
+            }
+        }
+
+        Showdata()
+
+        document.getElementById("next").addEventListener("click", () => {
+            if (index < question.length - 1) {
+                clearInterval(countIntervaltime)
+                index++
+                Showdata()
+            }
+        })
+
+
+        const originalAns = ["q1-c", "q2-c", "q3-a", "q4-d"]
+        var userAns = []
+
+        function Get_Score() {
+
+            let countscore = 0
+            Array.from(question).map((inputdata, i) => {
+
+                const selected = inputdata.querySelector('input[type="radio"]:checked')
+
+                if (selected && selected.value === originalAns[i]) {
+                    countscore++
+                }
+
+            })
+            document.querySelectorAll(".question").forEach(q => q.style.display = "none")
+            document.getElementById("submit").style.display = "none"
+            document.getElementById("next").style.display = "none"
+            document.getElementById("score").textContent = "Your Score is: " + countscore + " / " + question.length
+        }
+
+
+        document.getElementById("submit").addEventListener("click", () => {
+            Get_Score()
+        })
+    </script>
+
+</body>
+
+</html>
