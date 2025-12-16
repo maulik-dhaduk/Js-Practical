@@ -1,0 +1,137 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+
+        .icon-wrapper i {
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 6px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .icon-wrapper i:hover {
+      background: #dc3545;
+    }
+    
+        .error {
+      color: red;
+      font-size: 14px;
+    }
+
+    .img-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-wrapper img {
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .img-wrapper:hover img {
+      transform: scale(1.08);
+    }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-12">
+                
+                <div class="card shadow p-4">
+            <h3 class="mb-4 text-center" id="ontop">Add Product</h3>
+            
+            <form action="" id="product_form">
+                
+                <div class="mb-3">
+                    <label class="form-label">Product Name</label>
+                    <input type="text" name="pro_name" id="pro_name" class="form-control">
+                    <span class="error" id="err_name"></span>
+                </div>
+                
+                
+                <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="number" name="pro_price" id="pro_price" class="form-control">
+                    <span class="error" id="err_org"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Main Image</label>
+                    <input type="file" name="image" id="proimage" class="form-control">
+                    <span class="error" id="err_image"></span>
+                </div>
+                
+                
+                <div class="mb-3">
+                    <label class="form-label">Category</label>
+                    <input type="text" name="pro_category" id="pro_category" class="form-control">
+                    <span class="error" id="err_category"></span>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-dark w-100 add_product">Add Product</button>
+                </div>
+                
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+</div>
+
+
+<div class="container my-4">
+    <div class="card shadow-sm p-3">
+        <div class="row g-3 align-items-end">
+
+            <div class="col-md-4">
+                <label class="form-label fw-semibold">Search Product</label>
+                <div class="input-group">
+                    <input type="search" id="search" class="form-control" placeholder="Search product...">
+                    <button class="btn btn-dark" id="searchbtn">Search</button>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <label class="form-label fw-semibold">Sort By Price</label>
+                <select id="sorting" class="form-select">
+                    <option value="">Select Sorting</option>
+                    <option value="high_to_low">High to Low</option>
+                    <option value="low_to_high">Low to High</option>
+                </select>
+            </div>
+
+
+            <div class="col-md-4">
+                <label class="form-label fw-semibold">Filter By Category</label>
+                <select id="category_dropdown" class="form-select">
+                    <option value="">Select Category</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid px-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3 Show-Product">
+    </div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>
